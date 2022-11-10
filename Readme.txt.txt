@@ -1,0 +1,1 @@
+// bootstrap and jquery are linked with CDN
