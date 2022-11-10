@@ -4,8 +4,8 @@
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
-    <section class="content-header">
-      <div class="container-fluid">
+    <section class="content-header" >
+      <div class="container-fluid"  >
         <div class="row mb-2">
           <div class="col-sm-6">
             <h1>DataTables</h1>
@@ -24,7 +24,7 @@
     <section class="content">
       <div class="container-fluid">
         <div class="row">
-          <div class="col-12">
+          <div class="col-12" id="container" style="display: none;">
           <p id="result" style="color: red;">  *</p>
 
             <div class="card">
@@ -104,6 +104,7 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-primary" data-bs-dismiss="modal" id="insertBtn">INSERT</button>
+          <!-- <button type="button" class="btn btn-primary"   data-bs-dismiss="modal" id="update" >UPDATE</button> -->
 
         </div>
       </div>

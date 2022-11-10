@@ -14,6 +14,7 @@ if (isset($_POST["name"])) {
         if (preg_match('/^[0-9]{10}+$/', $phone)) {
             extract($_POST);
             if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
+                
                 extract($_POST);
                 // print_r($_POST);
                 $phone1=$countryCode.$phone;
@@ -33,12 +34,16 @@ if (isset($_POST["name"])) {
                     echo 0;
                 }
             } else {
-                echo 0;
+                echo 3;
             }
+        }else{
+            echo 4;
+        }
         } else {
             echo 0;
         }
     } else {
         echo 0;
     }
-}
+
+

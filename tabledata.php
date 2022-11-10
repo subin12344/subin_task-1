@@ -24,6 +24,11 @@ foreach($query['result'] as $row ){
     <td>$row[Email_ID]</td>
     <td>$row[Passport_ID]</td>
     <td>$row[Expiry_Date]</td>
+    <td>
+    <button class='btn btn-outline-info' data-bs-toggle='modal' data-bs-target='#exampleModal' id='edit' data-id='$row[id]'>edit</button>
+    <button class='btn btn-outline-danger 'id='delate' data-id='$row[id]'>delate</button>
+
+    </td>
    </tr>";
 };
 
@@ -40,3 +45,4 @@ foreach($query['result'] as $row ){
 //    </tr>";
 // }
 ?>
+
