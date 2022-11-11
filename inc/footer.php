@@ -169,14 +169,12 @@
         tabledata();
         if (response == 1) {
           $("#result").text("Update successfull");
-
         }
         if (response == 0) {
           $("#result").text("Update error");
         }
         if (response == 3) {
           $("#result").text("Enter The Correct Email");
-
         }
         if (response == 4) {
           $("#result").text("Enter The Valied Phone Number");
@@ -209,11 +207,8 @@
       }
       do_ajax_call(a, onsuccess, url = "delete.php");
     })
-
-
-
   });
+  
 </script>
 </body>
-
 </html>

@@ -11,7 +11,10 @@ echo " <tr>
 </tr>";
 
 // $sql="SELECT * FROM `my_customers`";
-$query=select_query($db,'my_customers','','','',1);
+// $datas = array("deletes" => '0');
+// `deletes` ='0'
+ $data="`deletes`=0";
+$query=select_query($db,'my_customers','',$data,'',1);
 
 
 

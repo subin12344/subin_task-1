@@ -5,6 +5,7 @@ include 'Functions/functions.php';
 // // extract($_POST);
 // print_r($id);
 $id ="id =".$_POST['data'];
+
 $query=select_query($db,'my_customers','',$id,'','');
 
  $row=$query['result'];
