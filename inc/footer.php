@@ -96,6 +96,37 @@
       $("#container").show();
 
     })
+
+    $(".table").on("click", "#edit", function() {
+      var num = $(this).attr("data-id");
+      
+      let a = {data:num};
+      var onsuccess = function(data) {
+        // console.log(data);
+        var response=JSON.parse(data);
+        // console.log(response[0]);
+        $("#hid").val(response[0].id);
+        $("#name").val(response[0].Name);
+        var newnum = response[0].Phone_number;
+
+          var phone_no=newnum.slice(-10);
+          // console.log(phone_no);
+        $("#phone").val(phone_no);
+        // console.log(response[0].Phone_number);
+        $("#email").val(response[0].Email_ID);
+        $("#passport").val(response[0].Passport_ID);
+        $("#exp_date").val(response[0].Expiry_Date);
+        // console.log(response[0].id);
+        
+
+
+
+      }
+      // alert(id);
+      do_ajax_call( a, onsuccess, url = 'showdata.php');
+
+    })
+
   });
 </script>
 </body>

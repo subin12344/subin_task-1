@@ -68,6 +68,7 @@
         </div>
         <div class="modal-body">
           <form action=""method="POST" id="form">
+            <input type="hidden" id="hid" name="hid">
             
 
             <input type="text" class="form-control" id="name" name="name" placeholder="Enter your Name">

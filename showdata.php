@@ -1,8 +1,11 @@
 <?php 
 include 'db.php';
 include 'Functions/functions.php';
-$id=$_POST['id'];
-$query=select_query($db,'my_customers','','id=$id','',1);
+// $id=$_POST['data'];
+// // extract($_POST);
+// print_r($id);
+$id ="id =".$_POST['data'];
+$query=select_query($db,'my_customers','',$id,'','');
 
  $row=$query['result'];
 
