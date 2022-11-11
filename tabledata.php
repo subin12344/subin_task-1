@@ -7,7 +7,8 @@ echo " <tr>
 <th>Phone Number</th>
 <th>Email</th>
 <th>Passport</th>
-<th>exp_date</th>
+<th>Exp_date</th>
+<th>Action</th>
 </tr>";
 
 // $sql="SELECT * FROM `my_customers`";
