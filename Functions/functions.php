@@ -54,7 +54,7 @@ function select_query($con, $table_name, $field_name, $condition, $limitations =
 
     $selectQ = "select $field_name from $table_name";
 
-    if ($condition != "") {
+    if ($condition = "") {
 
         $selectQ .= " where $condition";
 
@@ -347,6 +347,7 @@ function update($con, $table, $upcond, $new_field = '', $up_folder = '', $checkb
     }
 
 
+    $updatefield = "";
 
     if ($new_field) {
 
@@ -389,9 +390,11 @@ function update($con, $table, $upcond, $new_field = '', $up_folder = '', $checkb
 
         $reserror = mysqli_error($con);
 
+    }else{
+        $reserror=""; //...........................................error
     }
 
-    $ar = mysqli_affected_rows();
+    $ar = mysqli_affected_rows($con); /*****db name not mentioned**** */
 
     return array('ar' => $ar, 'errors' => $reserror);
 

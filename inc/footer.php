@@ -25,11 +25,24 @@
 <script src="Functions/common.js"></script>
 <script>
   $(document).ready(function() {
+    //................................................................container show
     $("#insertBtn").click(function() {
+
       $("#container").show();
       //  console.log(formdata);
       saveformNew();
     })
+    $("#Customer").click(function(){
+      $("#update").hide();
+        $("#insertBtn").show();
+
+    })
+    $(".add").click(function(){
+      $("#update").hide();
+        $("#insertBtn").show();
+
+    })
+    //................................................................insert start
 
     function saveformNew() {
       // alert("Click me");
@@ -78,24 +91,40 @@
       do_ajax_call(post_data, onsuccess, url = 'insert.php');
 
     }
+    //........................................................................insert end
+
+    //................................................................show data function start
 
     function tabledata() {
-      $.ajax({
-        url: "tabledata.php",
-        type: "POST",
-        data: tabledata,
-        success: function(data) {
-          $(".table").html(data);
-          // console.log(data);
-        }
-      })
+      // $.ajax({
+      //   url: "tabledata.php",
+      //   type: "POST",
+      //   data: tabledata,
+      //   success: function(data) {
+      //     $(".table").html(data);
+      //     // console.log(data);
+      //   }
+      // })
+ 
+
+      var onsuccess = function(data) {
+        $(".table").html(data);
+      }
+      do_ajax_call('', onsuccess, url = "tabledata.php")
     }
     tabledata();
+    //................................................................show data function end
+
+
+
     $("#my_customer").click(function() {
       // alert("Coding on process ");
+ 
       $("#container").show();
 
     })
+    
+    //................................................................text box show start
 
     $(".table").on("click", "#edit", function() {
       var num = $(this).attr("data-id");
@@ -116,16 +145,52 @@
         $("#email").val(response[0].Email_ID);
         $("#passport").val(response[0].Passport_ID);
         $("#exp_date").val(response[0].Expiry_Date);
+        $("#update").show();
+        $("#insertBtn").hide();
         // console.log(response[0].id);
-        
-
-
-
       }
       // alert(id);
       do_ajax_call( a, onsuccess, url = 'showdata.php');
 
     })
+    //................................................................text box show end
+
+
+
+
+    //................................................................text box show end
+    
+    //................................................................update start
+
+    $("#update").click(function(){
+      var formdata = $("#form").serializeArray();
+      var onsuccess = function(response) {
+        // console.log(response);
+        tabledata();
+        if (response == 1) {
+          $("#result").text("Update successfull");
+
+        }
+        if (response == 0) {
+          $("#result").text("Update error");
+        }
+        if (response == 3) {
+          $("#result").text("Enter The Correct Email");
+
+        }
+        if (response == 4) {
+          $("#result").text("Enter The Valied Phone Number");
+        }
+        if (response == 5) {
+          $("#result").text("Fill All Colums");
+        }
+      }
+      do_ajax_call(formdata, onsuccess, url = "update.php");
+    })
+    //................................................................update end
+
+
+
 
   });
 </script>

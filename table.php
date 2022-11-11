@@ -31,7 +31,7 @@
 
               <div class="card-header d-grid gap-2 d-md-flex justify-content-md-end">
 
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                <button type="button" class="btn btn-primary add" data-bs-toggle="modal" data-bs-target="#exampleModal">
                   Add
                 </button>
               </div>
@@ -105,8 +105,7 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-primary" data-bs-dismiss="modal" id="insertBtn">INSERT</button>
-          <!-- <button type="button" class="btn btn-primary"   data-bs-dismiss="modal" id="update" >UPDATE</button> -->
-
+          <button type="button" class="btn btn-primary" style="display:none;"  data-bs-dismiss="modal" id="update" >UPDATE</button>
         </div>
       </div>
     </div>
