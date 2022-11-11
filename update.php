@@ -23,7 +23,7 @@ if (isset($_POST["name"])) {
                 $datas = array("Name" => $name, "Phone_number" => $phone1, "Email_ID" => $email, "Passport_ID" => $passport,"Expiry_Date"=>$exp_date);
 
 
-                $insert = update($db, 'my_customers', "`id`='$hid'", $datas, '', '', 1);
+                $insert = update($db, 'my_customers', "`id`='$hid'", $datas, '', '', '');
 
                 // $sql = "INSERT INTO `my_customers` (`Name`,`Phone_number`,`country_code`,`Email_ID`,`Passport_ID`,`Expiry_Date`) VALUES ('$name','$countryCode','$phone','$email','$passport','$exp_date')";
                 // $result = $db->query($sql);

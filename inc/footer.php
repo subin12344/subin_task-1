@@ -190,6 +190,26 @@
     //................................................................update end
 
 
+    //................................................................Delete Start
+
+    $(".table").on("click", "#delate", function() {
+      var num = $(this).attr("data-id");
+      //  alert(num);
+      let a = {data:num};
+      var onsuccess = function(response) {
+        tabledata();
+        if (response == 0) {
+          $("#result").text("Delete successfull");
+
+        }
+        if (response == 1) {
+          $("#result").text("Delete error");
+        }
+
+      }
+      do_ajax_call(a, onsuccess, url = "delete.php");
+    })
+
 
 
   });
